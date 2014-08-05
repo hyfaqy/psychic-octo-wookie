@@ -6,10 +6,10 @@ public class FizzBuzzTest {
     
     public static void main(String args[]) {
         
-        test1_should_be_1();
-        test2_should_be_2();
-        test3_should_be_Fizz();
-        test6_shuold_be_Fizz();
+        new FizzBuzzTest().test1_should_be_1();
+        new FizzBuzzTest().test2_should_be_2();
+        new FizzBuzzTest().test3_should_be_Fizz();
+        new FizzBuzzTest().test6_shuold_be_Fizz();
         testReport();
     }
     
@@ -27,23 +27,19 @@ public class FizzBuzzTest {
             System.out.println("Test Failed");
         }
     }
-    
-    public static void test1_should_be_1() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
+    FizzBuzz fizzBuzz = new FizzBuzz();
+    public void test1_should_be_1() {
         assertEquals("1", fizzBuzz.say(1));
     }
         
-    public static void test2_should_be_2() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
+    public void test2_should_be_2() {
         assertEquals("2", fizzBuzz.say(2));
     }
-    public static void test3_should_be_Fizz() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
+    public void test3_should_be_Fizz() {
         assertEquals("Fizz", fizzBuzz.say(3));
     }
         
-    public static void test6_shuold_be_Fizz() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
+    public void test6_shuold_be_Fizz() {
         assertEquals("Fizz", fizzBuzz.say(6));
     }
         
