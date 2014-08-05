@@ -16,8 +16,14 @@ public class FizzBuzzTest {
     private static void runAllTests(Class clazz) throws Exception {
         for(Method method: getAllTestMethods(clazz)) {
             System.out.println("testing: " + method.getName());
+            try {
             Object obj = clazz.newInstance();
             method.invoke(obj, new Object[]{});  
+            } catch(Exception e) {
+                testResult = false;
+                System.out.println("Unexpected exception!");
+                e.printStackTrace();
+            }
         }
     }
     
@@ -54,6 +60,10 @@ public class FizzBuzzTest {
     
     public void test5_should_be_Buzz() {
         assertEquals("Buzz", fizzBuzz.say(5));
+    }
+    
+    public void test4_should_be_4() {
+        assertEquals("4", fizzBuzz.say(4));
     }
     
     private static List<Method> getAllTestMethods(Class clazz) {
