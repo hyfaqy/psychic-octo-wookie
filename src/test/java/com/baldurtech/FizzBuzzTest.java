@@ -1,16 +1,25 @@
 package com.baldurtech;
- 
+
+import java.lang.reflect.Method;
+
 public class FizzBuzzTest {
  
     static Boolean testResult = true;
     
-    public static void main(String args[]) {
-        
-        new FizzBuzzTest().test1_should_be_1();
+    public static void main(String args[]) throws Exception {
+        Method[] methods = FizzBuzzTest.class.getDeclaredMethods();
+        for(Method method: methods) {
+            if(method.getName().startsWith("test")) {
+                System.out.println("testing: " + method.getName());
+                Object obj = FizzBuzzTest.class.newInstance();
+                method.invoke(obj, new Object[]{});
+            }
+        }
+     /* new FizzBuzzTest().test1_should_be_1();
         new FizzBuzzTest().test2_should_be_2();
         new FizzBuzzTest().test3_should_be_Fizz();
         new FizzBuzzTest().test6_shuold_be_Fizz();
-        new FizzBuzzTest().test5_should_be_Buzz();
+        new FizzBuzzTest().test5_should_be_Buzz();  */
         testReport();
     }
     
