@@ -10,6 +10,7 @@ public class FizzBuzzTest {
         new FizzBuzzTest().test2_should_be_2();
         new FizzBuzzTest().test3_should_be_Fizz();
         new FizzBuzzTest().test6_shuold_be_Fizz();
+        new FizzBuzzTest().test5_should_be_Buzz();
         testReport();
     }
     
@@ -41,6 +42,10 @@ public class FizzBuzzTest {
         
     public void test6_shuold_be_Fizz() {
         assertEquals("Fizz", fizzBuzz.say(6));
+    }
+    
+    public void test5_should_be_Buzz() {
+        assertEquals("Buzz", fizzBuzz.say(5));
     }
         
 }
