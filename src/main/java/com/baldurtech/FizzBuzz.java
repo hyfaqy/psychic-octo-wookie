@@ -3,7 +3,7 @@ package com.baldurtech;
 public class FizzBuzz {
 
     public String say(Integer num) {
-        return null;
+        return String.valueOf(num);
     }
     public static void main(String args[]) {
         FizzBuzz fizzBuzz = new FizzBuzz();
