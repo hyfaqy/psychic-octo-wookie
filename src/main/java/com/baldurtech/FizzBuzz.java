@@ -8,8 +8,10 @@ public class FizzBuzz {
         }
         return String.valueOf(num);
     }
+    
+    static Boolean testResult = true;
+    
     public static void main(String args[]) {
-        boolean testResult = true;
         FizzBuzz fizzBuzz = new FizzBuzz();
         String actualResult = fizzBuzz.say(1);
         
