@@ -1,3 +1,3 @@
 #!/bin/sh
 
-java -classpath target/classes com.baldurtech.FizzBuzzTest
+java -classpath "target/test-classes;target/classes" com.baldurtech.FizzBuzzTest
