@@ -8,9 +8,12 @@ public class FizzBuzzTest {
         FizzBuzzTest fizzBuzzTest = new FizzBuzzTest();
         FizzBuzz fizzBuzz = new FizzBuzz();
         fizzBuzzTest.assertEquals("1", fizzBuzz.say(1));
-        fizzBuzzTest.assertEquals("2", fizzBuzz.say(2));
-        fizzBuzzTest.assertEquals("Fizz", fizzBuzz.say(3));
-        fizzBuzzTest.assertEquals("Fizz", fizzBuzz.say(6));
+        FizzBuzz fizzBuzz2 = new FizzBuzz();
+        fizzBuzzTest.assertEquals("2", fizzBuzz2.say(2));
+        FizzBuzz fizzBuzz3 = new FizzBuzz();
+        fizzBuzzTest.assertEquals("Fizz", fizzBuzz3.say(3));
+        FizzBuzz fizzBuzz4 = new FizzBuzz();
+        fizzBuzzTest.assertEquals("Fizz", fizzBuzz4.say(6));
         testReport();
     }
     
