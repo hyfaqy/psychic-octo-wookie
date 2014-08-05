@@ -9,8 +9,26 @@ public class FizzBuzz {
         return String.valueOf(num);
     }
     public static void main(String args[]) {
+        boolean testResult = true;
         FizzBuzz fizzBuzz = new FizzBuzz();
-        System.out.println(fizzBuzz.say(1));
-        System.out.println(fizzBuzz.say(3));
+        String actualResult = fizzBuzz.say(1);
+        
+        if("1".equals(actualResult) == false) {
+            testResult = false;
+            System.out.println("Expeccted Result : 1, but Actual Result:" + actualResult);
+        }
+        
+        actualResult = fizzBuzz.say(3);
+        
+        if("Fizz".equals(actualResult) == false) {
+            testResult = false;
+            System.out.println("Expeccted Result : Fizz , but Actual Result:" + actualResult);
+        }
+        
+        if(testResult) {
+            System.out.println("Test Success");
+        } else {
+            System.out.println("Test Failed");
+        }
     }
 }
