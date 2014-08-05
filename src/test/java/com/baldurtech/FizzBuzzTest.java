@@ -9,13 +9,16 @@ public class FizzBuzzTest {
     static Boolean testResult = true;
     
     public static void main(String args[]) throws Exception {
-        Class clazz = FizzBuzzTest.class;
+        runAllTests(FizzBuzzTest.class);
+        testReport();
+    }
+    
+    private static void runAllTests(Class clazz) throws Exception {
         for(Method method: getAllTestMethods(clazz)) {
             System.out.println("testing: " + method.getName());
             Object obj = clazz.newInstance();
             method.invoke(obj, new Object[]{});  
         }
-        testReport();
     }
     
     public static void assertEquals(String expectedResult, String actualResult) {
