@@ -9,9 +9,10 @@ public class FizzBuzzTest {
     static Boolean testResult = true;
     
     public static void main(String args[]) throws Exception {
-        for(Method method: getAllTestMethods(FizzBuzzTest.class)) {
+        Class clazz = FizzBuzzTest.class;
+        for(Method method: getAllTestMethods(clazz)) {
             System.out.println("testing: " + method.getName());
-            Object obj = FizzBuzzTest.class.newInstance();
+            Object obj = clazz.newInstance();
             method.invoke(obj, new Object[]{});  
         }
         testReport();
