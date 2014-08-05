@@ -13,17 +13,9 @@ public class FizzBuzz {
     
     public static void main(String args[]) {
         FizzBuzz fizzBuzz = new FizzBuzz();
-        
-        String actualResult = fizzBuzz.say(1);
-       
         fizzBuzz.assertEquals("1", fizzBuzz.say(1));
         fizzBuzz.assertEquals("Fizz", fizzBuzz.say(3));
-        
-        if(testResult) {
-            System.out.println("Test Success");
-        } else {
-            System.out.println("Test Failed");
-        }
+        testReport();
     }
     
     public void assertEquals(String expectedResult, String actualResult) {
@@ -31,5 +23,12 @@ public class FizzBuzz {
                 testResult = false;
                 System.out.println("Expeccted Result : " + expectedResult + ", but Actual Result:" + actualResult);
             }
+    }
+    public static void testReport() {
+        if(testResult) {
+            System.out.println("Test Success");
+        } else {
+            System.out.println("Test Failed");
+        }
     }
 }
