@@ -13,24 +13,23 @@ public class FizzBuzz {
     
     public static void main(String args[]) {
         FizzBuzz fizzBuzz = new FizzBuzz();
+        
         String actualResult = fizzBuzz.say(1);
-        
-        if("1".equals(actualResult) == false) {
-            testResult = false;
-            System.out.println("Expeccted Result : 1, but Actual Result:" + actualResult);
-        }
-        
-        actualResult = fizzBuzz.say(3);
-        
-        if("Fizz".equals(actualResult) == false) {
-            testResult = false;
-            System.out.println("Expeccted Result : Fizz , but Actual Result:" + actualResult);
-        }
+       
+        fizzBuzz.assertEquals("1", fizzBuzz.say(1));
+        fizzBuzz.assertEquals("Fizz", fizzBuzz.say(3));
         
         if(testResult) {
             System.out.println("Test Success");
         } else {
             System.out.println("Test Failed");
         }
+    }
+    
+    public void assertEquals(String expectedResult, String actualResult) {
+            if(expectedResult.equals(actualResult) == false) {
+                testResult = false;
+                System.out.println("Expeccted Result : " + expectedResult + ", but Actual Result:" + actualResult);
+            }
     }
 }
