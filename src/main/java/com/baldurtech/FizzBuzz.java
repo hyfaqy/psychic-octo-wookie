@@ -17,10 +17,10 @@ class FizzBuzz {
         testResult = assertEquals("2", fizzBuzz.say(2));
         testResult = assertEquals("Fizz", fizzBuzz.say(3));
         
-        testReport(testResult);
+        outputTestReport(testResult);
     }
     
-    public static void testReport(boolean testResult) {
+    public static void outputTestReport(boolean testResult) {
         if(testResult) {
             System.out.println("Test Success");
         } else {
