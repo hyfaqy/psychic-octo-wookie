@@ -10,21 +10,26 @@ class FizzBuzz {
         FizzBuzz fizzBuzz = new FizzBuzz();
         
         testResult = assertEquals("1", fizzBuzz.say(1));
-        testResult = assertEquals("2", fizzBuzz.say(2));
+        testResult = assertEquals("3", fizzBuzz.say(2));
         
+        testReport(testResult);
+    }
+    
+    public static void testReport(boolean testResult) {
         if(testResult) {
             System.out.println("Test Success");
         } else {
             System.out.println("Test False");
         }
     }
-    
     public static boolean assertEquals(String expectedResult, String actualResult) {
         if(expectedResult.equals(actualResult)) {
             testResult = true;
+            return testResult;
         } else {
+            testResult = false;
             System.out.println("Expected" + expectedResult + "but" + actualResult);
+            return testResult;
         }
-        return testResult;
     }  
 }
