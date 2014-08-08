@@ -2,7 +2,11 @@ package com.baldurtech;
 
 class FizzBuzz {
     static boolean testResult = false;
+    
     public String say(Integer num) {
+        if(num%3 == 0) {
+            return "Fizz";
+        }
         return String.valueOf(num);
     }
 
@@ -10,7 +14,8 @@ class FizzBuzz {
         FizzBuzz fizzBuzz = new FizzBuzz();
         
         testResult = assertEquals("1", fizzBuzz.say(1));
-        testResult = assertEquals("3", fizzBuzz.say(2));
+        testResult = assertEquals("2", fizzBuzz.say(2));
+        testResult = assertEquals("Fizz", fizzBuzz.say(3));
         
         testReport(testResult);
     }
