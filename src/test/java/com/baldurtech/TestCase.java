@@ -3,14 +3,26 @@ package com.baldurtech;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
+
+import org.reflections.Reflections;
 
 public class TestCase {
 
     static Boolean testResult = true;
-    
-    
+     
     public static void main(String args[]) {
-        runAllTests(FizzBuzzTest.class);
+        
+        String testPackage = "com.baldurtech";
+        
+        Reflections reflections = new Reflections(testPackage);
+        
+        Set<Class<? extends TestCase>> allTestCase = reflections.getSubTypesOf(TestCase.class);
+        
+        for(Class clazz: allTestCase) {
+            System.out.println("Testing: " + clazz.getName());
+            runAllTests(clazz);
+        }
         testReport();
     }
     
