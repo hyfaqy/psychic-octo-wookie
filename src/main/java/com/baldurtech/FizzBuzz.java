@@ -1,8 +1,8 @@
 package com.baldurtech;
 
 class FizzBuzz {
+    boolean thisIsABug = false;
     public String say(Integer num) {
-        boolean thisIsABug = false;
         if(num == 2) thisIsABug = true;
         if(num%3 == 0) {
             if(thisIsABug) {
